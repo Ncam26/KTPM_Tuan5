@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest   # Sử dụng image Nginx mới nhất
+    ports:
+      - "8080:80"         # Map cổng 8080 trên host với cổng 80 trong container
+    volumes:
+      - ./html:/usr/share/nginx/html   # Tùy chọn (nếu muốn tùy chỉnh nội dung của Nginx)
+    restart: always        # Khởi động lại container khi bị lỗi
